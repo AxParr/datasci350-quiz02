@@ -1,77 +1,93 @@
 # DATASCI 350 - Data Science Computing
 
-## Quiz 02: Creating a Website with Quarto and GitHub Pages
+## Quiz 02 - Building a website with Quarto and GitHub Pages
 
-### Instructions
+### The scenario
 
-In this quiz, you will create a website using Quarto and GitHub Pages as shown in our previous lectures. The website will contain four pages:
+A film magazine has hired you to turn its box-office dataset into a small public website. The repository holds `films.csv`: 104 well-known films from 1980 to 2025, with approximate budgets, worldwide revenues, runtimes, and ratings. Your job is to build a four-page Quarto website from it and publish the site on GitHub Pages.
 
-- An index (home) page with a title, one sentence about the Gapminder dataset, and links to the other three pages.
-- A page with a graph showing the relationship between life expectancy and GDP per capita over time.
-- A page analysing the relationship between life expectancy and population.
-- A page analysing changes in life expectancy, GDP per capita, and population for a specific country over time.
+This quiz covers lectures 10 and 11. It is open-book and open-notes. It is an individual assessment: do not discuss the questions with your colleagues during class.
 
-The website should be published on GitHub Pages and the link to the website should be submitted on Canvas. You can use either R or Python to create the graphs and the analysis. A short description of the dataset is provided here: <https://cran.r-project.org/web/packages/gapminder/index.html>.
+You must be able to explain every command and every line you submit. The instructor may ask any student to walk through part of their work, during the quiz or right after it.
 
-The dataset is available in this repository as `gapminder.csv`, and it contains 6 columns and 1,704 rows. The columns are: `country`, `continent`, `year`, `life_expectancy`, `population_millions`, and `gdp_per_capita`. The dataset contains information about these variables in 142 countries over the years 1952 to 2007, with a 5-year interval. If you would like to create the dataset yourself, you can run the code below.
+### The data
 
-```python
-# Install packages
-# !pip install pandas gapminder
+`films.csv` has one row per film and seven columns:
 
-# Import necessary libraries
-import pandas as pd
-from gapminder import gapminder
+| Column | Meaning |
+|--------|---------|
+| `title` | Film title |
+| `year` | Release year |
+| `franchise` | Series the film belongs to, or `Standalone` |
+| `budget_musd` | Production budget, millions of US dollars |
+| `revenue_musd` | Worldwide revenue, millions of US dollars |
+| `runtime_min` | Runtime in minutes |
+| `imdb_rating` | Public rating, 0 to 10 |
 
-# Rename 'lifeExp' to 'life_expectancy' and 'gdpPercap' to 'gdp_per_capita'
-gapminder = gapminder.rename(columns={'lifeExp': 'life_expectancy',
-                                      'pop': 'population_millions', 
-                                      'gdpPercap': 'gdp_per_capita'})
+The figures are approximate and not adjusted for inflation: they are for teaching, not for research. The file `create-dataset.py` shows how the dataset was built.
 
-# Convert population to millions
-gapminder['population_millions'] = gapminder['population_millions'] / 1_000_000
+The quiz grades your Quarto and Git work, not your Python. Any working plot earns the marks, and the plotting patterns from the lecture 11 examples are enough for every task. Where a task needs a Python idiom we have not covered, the code is given in the task.
 
-# Create a new pandas DataFrame from the modified gapminder data
-gapminder_df = pd.DataFrame(gapminder)
+### Rules
 
-# Save the DataFrame as a CSV file
-gapminder_df.to_csv('gapminder.csv', index=False)
-```
+- Work from the command line and your editor throughout. Files created or uploaded through the GitHub website lose points: the grader reads your commit history.
+- Record every command you run in a file named `commands.txt` in the repository's root directory. Where a task asks for a short explanation, write it in `commands.txt` too.
+- When you finish, post the link to your published website AND the link to your fork on Canvas, in the "Assignments" tab under Quiz 02.
+- State your AI usage on the index page (see task 6). The syllabus AI policy applies.
+
+### If `git push` asks for credentials
+
+Your machine should already be logged in to GitHub. If a push fails with an authentication error, do not waste time creating tokens: run `gh auth login`, choose GitHub.com, then HTTPS, and log in with the browser. After that, `git push` works normally.
+
+### Setup
+
+1. Fork this repository to your GitHub account.
+2. Clone your fork to your machine with the command line.
+3. Change directory into the cloned repository.
 
 ### Tasks
 
-1. Fork this repository to your GitHub account and clone it to your computer.
+1. Create a new Quarto website project inside the cloned repository folder (in VS Code, run `Quarto: Create Project`; if a tool asks you to choose a directory, use the repository folder itself). The folder gains `_quarto.yml`, `index.qmd`, `about.qmd`, and `styles.css`.
 
-2. Create a new Quarto website project in your local cloned folder (use `.` if asked to choose your directory).
+2. Create a `.gitignore` file with these three lines, then stage and commit it with the message "Add gitignore" before you render anything:
 
-3. In your local folder, create another folder named `docs` to store the rendered website. This is the folder that will be published on GitHub Pages.
+    ```text
+    /.quarto/
+    /_site/
+    __pycache__/
+    ```
 
-4. Modify the `_quarto.yml` file to include navigation links to your pages and direct the output to the `docs` folder.
+3. In `_quarto.yml`, set the website title to `Box Office Numbers`.
 
-5. Modify the `index.qmd` file to include a title, a one-line description of the Gapminder dataset, and links to the other website pages.
+4. In `_quarto.yml`, add the three analysis pages (tasks 7 to 9 create them) to the navigation bar with exactly these link texts: `Budget and Revenue`, `Runtime and Ratings`, `The Bond Films`.
 
-6. Create a page entitled `life-gdp.qmd` analysing the relationship between life expectancy and GDP per capita. Give it a title, a brief introduction, and a graph. Show your code. Also give it a link in the index page with the text "Life Expectancy and GDP per Capita".
+5. In `_quarto.yml`, set a theme of your choice from [Quarto's theme list](https://quarto.org/docs/output-formats/html-themes.html) and add `freeze: auto` under the `execute:` key.
 
-7. Create a page entitled `life-population.qmd` analysing the relationship between life expectancy and population. Do the same as in the previous task, but change the title and the link text to "Life Expectancy and Population".
+6. Edit `index.qmd` so the home page has: a title, two or three sentences describing the dataset, links to the three analysis pages, and one final line stating which AI tools you used during the quiz (or that you used none).
 
-8. Create a page entitled `country.qmd` analysing changes in life expectancy, GDP per capita, and population for a specific country over time. Give it a title, a brief introduction, and a graph. Show your code. Also give it a link in the index page with the text "Country Analysis".
+7. Create `budget-revenue.qmd`: a short introduction and a scatter plot of budget against revenue. Show the code (`echo: true`), and give the plot a caption with `fig-cap` and a label starting with `fig-`.
 
-9. Ensure the `_quarto.yml` file includes navigation links with custom names.
+8. Create `runtime-rating.qmd`: a short introduction, a scatter plot of runtime against rating with the same chunk anatomy as task 7, and a table of mean rating by decade. Build the decade column with `films["decade"] = films["year"] // 10 * 10` (this idiom is given because we have not covered it).
 
-10. Change the theme of the website to one of Quarto's available themes. You can find the list of themes here: <https://quarto.org/docs/output-formats/html-themes.html>.
+9. Create `bond.qmd`: a line chart of revenue over time for the films where `franchise` is `James Bond`, plus one sentence of prose that reports the first and last Bond year in the data using inline code, so the sentence updates if the data changes.
 
-11. Render the website and output the files to the `docs` folder.
+10. On one of the three analysis pages, reference the figure in your text with `@fig-...` so it renders as a numbered, clickable link.
 
-12. Add, commit, and push the changes to your forked repository.
+11. Render the website. Confirm that a `_freeze/` folder appeared, then stage and commit everything with the message "Add site pages and freeze".
 
-13. Go the repository settings on GitHub and enable GitHub Pages to publish the website. Remember to select the `docs` folder as the source.
+12. Publish the site with `quarto publish gh-pages`, as shown in lecture 11. (If that command fails on your machine, the fallback is the manual route: set `output-dir: docs` in `_quarto.yml`, render, commit, push, and enable GitHub Pages from the `docs` folder in your fork's settings. Note in `commands.txt` which route you used.)
 
-14. Check that the website is live and all pages are accessible.
+13. Open the published link and check that all four pages load and the navigation works. Fix and republish if not.
 
-15. Copy the GitHub Pages link and submit it on Canvas as instructed.
+14. Update `commands.txt` with every command you used, then stage and commit it with the message "Add command log".
 
-### Bonus Questions
+15. Push everything to your fork, then submit both links (website and fork) on Canvas. Done! 😊
 
-16. Enhance the website's appearance by adding a custom CSS file.
+### Bonus tasks
 
-17. Include an interactive map showing countries' life expectancy or GDP per capita. For this task, you can use the `plotly` library in Python, the `leaflet` library in R, or any other library you prefer.
+Attempt these only after finishing the main tasks, if you still have time. Document every step in `commands.txt`.
+
+1. Give the site a custom look: edit `styles.css` (change at least the link colour and one font setting) and make sure `_quarto.yml` points at it.
+2. Give the site paired light and dark themes in `_quarto.yml`, so the toggle appears in the navigation bar.
+
+Best of luck!

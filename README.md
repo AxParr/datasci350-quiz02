@@ -6,7 +6,7 @@
 
 A film magazine has hired you to turn its box-office dataset into a small public website. The repository holds `films.csv`: 104 well-known films from 1980 to 2025, with approximate budgets, worldwide revenues, runtimes, and ratings. Your job is to build a four-page Quarto website from it and publish the site on GitHub Pages.
 
-This quiz covers lectures 10 and 11. It is open-book and open-notes. It is an individual assessment: do not discuss the questions with your colleagues during class.
+This quiz is worth 6% of the final grade, and covers lectures 10 and 11. It is open-book and open-notes. It is an individual assessment: do not discuss the questions with your colleagues during class. You have 75 minutes.
 
 You must be able to explain every command and every line you submit. The instructor may ask any student to walk through part of their work, during the quiz or right after it.
 

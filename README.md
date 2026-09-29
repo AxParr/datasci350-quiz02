@@ -70,17 +70,15 @@ Your machine should already be logged in to GitHub. If a push fails with an auth
 
 9. Create `bond.qmd`: a line chart of revenue over time for the films where `franchise` is `James Bond`, plus one sentence of prose that reports the first and last Bond year in the data using inline code, so the sentence updates if the data changes. Wrap each value in `int()`, or it prints as `np.int64(...)`.
 
-10. On one of the three analysis pages, reference the figure in your text with `@fig-...` so it renders as a numbered, clickable link.
+10. Render the website. Confirm that a `_freeze/` folder appeared, then stage and commit everything with the message "Add site pages and freeze".
 
-11. Render the website. Confirm that a `_freeze/` folder appeared, then stage and commit everything with the message "Add site pages and freeze".
+11. Publish the site with `quarto publish gh-pages`, as shown in lecture 11. (If that command fails on your machine, the fallback is the manual route: set `output-dir: docs` in `_quarto.yml`, render, commit, push, and enable GitHub Pages from the `docs` folder in your fork's settings. Note in `commands.txt` which route you used.)
 
-12. Publish the site with `quarto publish gh-pages`, as shown in lecture 11. (If that command fails on your machine, the fallback is the manual route: set `output-dir: docs` in `_quarto.yml`, render, commit, push, and enable GitHub Pages from the `docs` folder in your fork's settings. Note in `commands.txt` which route you used.)
+12. Open the published link and check that all four pages load and the navigation works. Fix and republish if not.
 
-13. Open the published link and check that all four pages load and the navigation works. Fix and republish if not.
+13. Update `commands.txt` with every command you used, then stage and commit it with the message "Add command log".
 
-14. Update `commands.txt` with every command you used, then stage and commit it with the message "Add command log".
-
-15. Push everything to your fork (`quarto publish` does not push your `main` branch), then submit both links (website and fork) on Canvas. Done! 😊
+14. Push everything to your fork (`quarto publish` does not push your `main` branch), then submit both links (website and fork) on Canvas. Done! 😊
 
 ### Bonus tasks
 

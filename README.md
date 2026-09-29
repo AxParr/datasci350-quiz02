@@ -47,21 +47,20 @@ Your machine should already be logged in to GitHub. If a push fails with an auth
 
 ### Tasks
 
-1. Create a new Quarto website project inside the cloned repository folder (in VS Code, run `Quarto: Create Project`; if a tool asks you to choose a directory, use the repository folder itself). The folder gains `_quarto.yml`, `index.qmd`, `about.qmd`, and `styles.css`.
+1. Create a new Quarto website project inside the cloned repository folder. From the repository folder, run `quarto create project website .` in the terminal (the `.` means "the current folder"). Press Enter at the title question, and choose `(don't open)` at the next one. Do not use VS Code's `Quarto: Create Project` here: in a folder that is not empty, it puts the site in a new subfolder. The folder gains `_quarto.yml`, `index.qmd`, `about.qmd`, `styles.css`, and a hidden `.gitignore`.
 
-2. Create a `.gitignore` file with these three lines, then stage and commit it with the message "Add gitignore" before you render anything:
+2. Quarto's `.gitignore` already ignores `/.quarto/`. Add these two lines to the end of it, then stage and commit it with the message "Add gitignore" before you render anything:
 
     ```text
-    /.quarto/
     /_site/
     __pycache__/
     ```
 
 3. In `_quarto.yml`, set the website title to `Box Office Numbers`.
 
-4. In `_quarto.yml`, add the three analysis pages (tasks 7 to 9 create them) to the navigation bar with exactly these link texts: `Budget and Revenue`, `Runtime and Ratings`, `The Bond Films`.
+4. Delete `about.qmd` and remove it from the navigation bar. Then, in `_quarto.yml`, add the three analysis pages (tasks 7 to 9 create them) to the navigation bar with exactly these link texts: `Budget and Revenue`, `Runtime and Ratings`, `The Bond Films`.
 
-5. In `_quarto.yml`, set a theme of your choice from [Quarto's theme list](https://quarto.org/docs/output-formats/html-themes.html) and add `freeze: auto` under the `execute:` key.
+5. In `_quarto.yml`, set a theme of your choice from [Quarto's theme list](https://quarto.org/docs/output-formats/html-themes.html) (replace `theme:` and the two list lines below it that Quarto wrote) and add an `execute:` key with `freeze: auto` under it.
 
 6. Edit `index.qmd` so the home page has: a title, two or three sentences describing the dataset, links to the three analysis pages, and one final line stating which AI tools you used during the quiz (or that you used none).
 
@@ -69,7 +68,7 @@ Your machine should already be logged in to GitHub. If a push fails with an auth
 
 8. Create `runtime-rating.qmd`: a short introduction, a scatter plot of runtime against rating with the same chunk anatomy as task 7, and a table of mean rating by decade. Build the decade column with `films["decade"] = films["year"] // 10 * 10` (this idiom is given because we have not covered it).
 
-9. Create `bond.qmd`: a line chart of revenue over time for the films where `franchise` is `James Bond`, plus one sentence of prose that reports the first and last Bond year in the data using inline code, so the sentence updates if the data changes.
+9. Create `bond.qmd`: a line chart of revenue over time for the films where `franchise` is `James Bond`, plus one sentence of prose that reports the first and last Bond year in the data using inline code, so the sentence updates if the data changes. Wrap each value in `int()`, or it prints as `np.int64(...)`.
 
 10. On one of the three analysis pages, reference the figure in your text with `@fig-...` so it renders as a numbered, clickable link.
 
@@ -81,11 +80,11 @@ Your machine should already be logged in to GitHub. If a push fails with an auth
 
 14. Update `commands.txt` with every command you used, then stage and commit it with the message "Add command log".
 
-15. Push everything to your fork, then submit both links (website and fork) on Canvas. Done! 😊
+15. Push everything to your fork (`quarto publish` does not push your `main` branch), then submit both links (website and fork) on Canvas. Done! 😊
 
 ### Bonus tasks
 
-Attempt these only after finishing the main tasks, if you still have time. Document every step in `commands.txt`.
+Attempt these only after finishing the main tasks, if you still have time. Document every step in `commands.txt`. Afterwards, republish, commit and push again.
 
 1. Give the site a custom look: edit `styles.css` (change at least the link colour and one font setting) and make sure `_quarto.yml` points at it.
 2. Give the site paired light and dark themes in `_quarto.yml`, so the toggle appears in the navigation bar.

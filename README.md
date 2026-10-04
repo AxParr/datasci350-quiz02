@@ -26,7 +26,7 @@ You must be able to explain every command and every line you submit. The instruc
 
 The figures are approximate and not adjusted for inflation: they are for teaching, not for research. The file `create-dataset.py` shows how the dataset was built.
 
-The quiz grades your Quarto and Git work, not your Python. Any working plot earns the marks, and the plotting patterns from the lecture 11 examples are enough for every task. Where a task needs a Python idiom we have not covered, the code is given in the task.
+The quiz grades your Quarto and Git work, not your Python. Any working plot earns the marks. The line chart follows the lecture 11 examples. The scatter plots and the decade table use `scatter()` and `groupby()` from your earlier pandas work. Where a task needs an idiom you have not seen, the code is given in the task.
 
 ### Rules
 
@@ -76,7 +76,7 @@ Your machine should already be logged in to GitHub. If a push fails with an auth
 
 12. Open the published link and check that all four pages load and the navigation works. Fix and republish if not.
 
-13. Update `commands.txt` with every command you used, then stage and commit it with the message "Add command log".
+13. Update `commands.txt` with every command you used, then stage and commit it with the message "Add command log". Write the `git add`, `git commit` and `git push` lines into `commands.txt` before you run them.
 
 14. Push everything to your fork (`quarto publish` does not push your `main` branch), then submit both links (website and fork) on Canvas. Done! 😊
 

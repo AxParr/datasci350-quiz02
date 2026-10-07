@@ -24,7 +24,7 @@ You must be able to explain every command and every line you submit. The instruc
 | `runtime_min` | Runtime in minutes |
 | `imdb_rating` | Public rating, 0 to 10 |
 
-The figures are approximate and not adjusted for inflation: they are for teaching, not for research. The file `create-dataset.py` shows how the dataset was built.
+The figures are rounded and not adjusted for inflation, which is fine for a teaching dataset. The file `create-dataset.py` shows how the dataset was built.
 
 The quiz grades your Quarto and Git work, not your Python. Any working plot earns the marks. The line plot follows the lecture 11 examples. The scatter plots use `scatter()` from your earlier work. Where a task needs code you have not seen, the code is given in the task.
 

@@ -1,0 +1,12 @@
+{
+  "hash": "a881e83e0cbe94fb73aaa310fe272255",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"Box Office Numbers\"\n---\n\n::: {#ea1eecfb .cell execution_count=1}\n``` {.python .cell-code}\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\nfilms = pd.read_csv(\"films.csv\")\n```\n:::\n\n\nThis quarto site explores a dataset of films, consisting of 104 well-known films released between 1980 and 2025. For each film, the dataset records an approximate budget, worldwide revenue, runtime and rating. The figures are rounded and have not adjustedfor the inflation aspect.\n\n- [Budget and Revenue](budget-revenue.qmd)\n- [Runtime and Ratings](runtime-rating.qmd)\n- [The Bond Films](bond.qmd)\n\nAI tools were utilized for thiis quiz in particular, Claude (Anthropic), for help with Quarto and the Git setup, given there was errors thrown and being in the wrong terminal in the beginning. \n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

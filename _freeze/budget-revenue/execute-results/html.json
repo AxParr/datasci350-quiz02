@@ -1,0 +1,12 @@
+{
+  "hash": "4f0c537d6349570384c16b2c092a6176",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"Budget and Revenue\"\n---\n\n::: {#b05eebe2 .cell execution_count=1}\n``` {.python .cell-code}\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\nfilms = pd.read_csv(\"films.csv\")\n```\n:::\n\n\nDoes having a bigger budgets result in a bigger box-office returns? @fig-budget-revenue\nplots each film's budget against its Worldwide revenue. The values are in millions of US Dollars. \n\n::: {#cell-fig-budget-revenue .cell execution_count=2}\n``` {.python .cell-code}\nplt.scatter(films[\"budget_musd\"], films[\"revenue_musd\"])\nplt.xlabel(\"Budget (musd)\")\nplt.ylabel(\"Worldwide revenue (musd)\")\nplt.show()\n```\n\n::: {.cell-output .cell-output-display}\n![Budget against Worldwide revenue](budget-revenue_files/figure-html/fig-budget-revenue-output-1.png){#fig-budget-revenue width=602 height=429}\n:::\n:::\n\n\n",
+    "supporting": [
+      "budget-revenue_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "hash": "b037f93f82789f40e7cbfd8128a06fdf",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"Bond Films\"\n---\n\n::: {#6463ea3e .cell execution_count=1}\n``` {.python .cell-code}\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\nfilms = pd.read_csv(\"films.csv\")\n```\n:::\n\n\n::: {#3fa3bda9 .cell execution_count=2}\n``` {.python .cell-code}\nbond = films[films[\"franchise\"] == \"James Bond\"]\nbond = bond.sort_values(\"year\")\n```\n:::\n\n\nThe following dataset will include the dataset of Bond films from 1995\nto 2021.\n\n::: {#2bd7b74b .cell execution_count=3}\n``` {.python .cell-code}\nplt.plot(bond[\"year\"], bond[\"revenue_musd\"], marker=\"o\")\nplt.xlabel(\"Year\")\nplt.ylabel(\"Worldwide revenue (musd)\")\nplt.show()\n```\n\n::: {.cell-output .cell-output-display}\n![](bond_files/figure-html/cell-4-output-1.png){width=601 height=429}\n:::\n:::\n\n\n",
+    "supporting": [
+      "bond_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

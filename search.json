@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "budget-revenue.html",
+    "href": "budget-revenue.html",
+    "title": "Budget and Revenue",
+    "section": "",
+    "text": "import pandas as pd\nimport matplotlib.pyplot as plt\n\nfilms = pd.read_csv(\"films.csv\")\n\nDoes having a bigger budgets result in a bigger box-office returns? Figure 1 plots each film’s budget against its Worldwide revenue. The values are in millions of US Dollars.\n\nplt.scatter(films[\"budget_musd\"], films[\"revenue_musd\"])\nplt.xlabel(\"Budget (musd)\")\nplt.ylabel(\"Worldwide revenue (musd)\")\nplt.show()\n\n\n\n\n\n\n\nFigure 1: Budget against Worldwide revenue"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Box Office Numbers",
+    "section": "",
+    "text": "import pandas as pd\nimport matplotlib.pyplot as plt\n\nfilms = pd.read_csv(\"films.csv\")\n\nThis quarto site explores a dataset of films, consisting of 104 well-known films released between 1980 and 2025. For each film, the dataset records an approximate budget, worldwide revenue, runtime and rating. The figures are rounded and have not adjustedfor the inflation aspect.\n\nBudget and Revenue\nRuntime and Ratings\nThe Bond Films\n\nAI tools were utilized for thiis quiz in particular, Claude (Anthropic), for help with Quarto and the Git setup, given there was errors thrown and being in the wrong terminal in the beginning."
+  },
+  {
+    "objectID": "runtime-rating.html",
+    "href": "runtime-rating.html",
+    "title": "Runtime and Ratings",
+    "section": "",
+    "text": "import pandas as pd\nimport matplotlib.pyplot as plt\n\nfilms = pd.read_csv(\"films.csv\")\n\nDo longer films get better rating? The Figure 1 plots each film’s runtime against its IMDb rating.\n\nplt.scatter(films[\"runtime_min\"], films[\"imdb_rating\"])\nplt.xlabel(\"Runtime (min)\")\nplt.ylabel(\"IMDb rating\")\nplt.show()\n\n\n\n\n\n\n\nFigure 1: Runtime against IMDb rating\n\n\n\n\n\nBelow you will be able to find the mean rating of each decade.\n\nfilms[\"decade\"] = films[\"year\"] // 10 * 10\nfilms.groupby(\"decade\")[\"imdb_rating\"].mean().round(2)\n\ndecade\n1980    8.01\n1990    7.70\n2000    7.94\n2010    7.83\n2020    7.44\nName: imdb_rating, dtype: float64"
+  },
+  {
+    "objectID": "bond.html",
+    "href": "bond.html",
+    "title": "Bond Films",
+    "section": "",
+    "text": "import pandas as pd\nimport matplotlib.pyplot as plt\n\nfilms = pd.read_csv(\"films.csv\")\n\n\nbond = films[films[\"franchise\"] == \"James Bond\"]\nbond = bond.sort_values(\"year\")\n\nThe following dataset will include the dataset of Bond films from 1995 to 2021.\n\nplt.plot(bond[\"year\"], bond[\"revenue_musd\"], marker=\"o\")\nplt.xlabel(\"Year\")\nplt.ylabel(\"Worldwide revenue (musd)\")\nplt.show()"
+  }
+]

@@ -1,0 +1,384 @@
+#Commits used
+   1  ls
+    2  cd ./
+    3  cd./
+    4  cd~
+    5   cd ~
+    6  cd.~
+    7  cd~
+    8  cd ~
+    9  cd~
+   10  pwd
+   11  sudo scutil --set
+   12  ComputerName
+   13  sudo scutil -- set ComputerName "Macbook"
+   14  sudo scutil --setComputerName"Macbook"
+   15  Macbook
+   16  pwd
+   17  git  clone ^[[200~https://github.com/AxParr/calendar-base-s.git~
+   18  git clone https://github.com/AxParr/calendar-base-s.git
+   19  touch test.txt
+   20  echo"hi" > test.txt
+   21  git add . 
+   22  git commit
+   23  /m
+   24  "addedtext"
+   25  pwd
+   26  cdcalendar-base-s
+   27  cd calendar-base-s
+   28  git add . 
+   29  git commit /m "update"
+   30  git status
+   31  git push
+   32  git add .
+   33  git commit /$ "update"
+   34  git commit /m "updates"
+   35  git commit-m "update"
+   36  git commit - m "update"
+   37  git commit -m "hi"
+   38  git push 
+   39  git add . 
+   40  cd calendar-base-s
+   41  touch.txt
+   42  touctexrt.txt
+   43  touch text.txt
+   44  git add .
+   45  it commit
+   46  git commit
+   47  gh repo clone AxParr/datasci350-quiz01
+   48  https://github.com/AxParr/datasci350-quiz01.git
+   49  gh repo clone https://github.com/AxParr/datasci350-quiz01.git
+   50  https://github.com/AxParr/datasci350.Fall.git
+   51  https://github.com/AxParr/datasci350-quiz01.git
+   52  https://github.com/AxParr/datasci350-quiz01.git
+   53  git clone https://github.com/AxParr/datasci350-quiz01
+   54  cd datasci350-quiz01
+   55  touch commands.txt 
+   56  git checkout -b station-upgrade
+   57  mkdir results
+   58  touch results./gitkeep
+   59  touch results/.gitkeep
+   60  touch results/summary.md\necho "Analysis of the first field season." >> results/summary.md
+   61  git diff
+   62  touch results/summary.md
+   63  echo "Analysis of the first field season." >> results/summary.md
+   64  git diff
+   65  cat results/summary.md
+   66  git add results 
+   67  git commit -m "Add result directory"
+   68  git mv data/sensor-readings.csv data/station-data.csv
+   69  check status 
+   70  git status
+   71  mkdir scripts/archive && cp scripts/*.py scripts/archive/
+   72  git rm docs/notes.md
+   73  git status
+   74  git add -A
+   75  git commit -- m "Update station filed"
+   76  git commit -m "Update station files"
+   77  touch .gitignore
+   78  echo "temp/" >> .gitignore
+   79  echo "log?.txt" >> .gitignore
+   80  cat .gitignore
+   81  git add .gitignore && git commit -m "Add gitignore"
+   82  touch log{1..4}.txt
+   83  git status 
+   84  git status >> commands.txt
+   85  echo "The log files do not apper because they are set to match the log?.txt inside of .gitignore, since it is not isnide then it will be ignored." >> commands.txt
+   86  cat commands.txt
+   87  wc -l < data/station-data.csv >> results/summary.md
+   88  wc -l < data/station-data.csv | tr -d ' ' >> results/summary.md
+   89  cat results/summary.md
+   90  nano scripts/03-plot.py
+   91  git diff\ngit diff >> commands.txt\necho "Lines starting with + are lines that were added to the file since the last commit." >> commands.txt
+   92  git add -A\ngit commit -m "Update analyss"
+   93  git commit --amend -m "Update analysis"
+   94  git checkout main
+   95  git add commands.txt && git commit -m "Update commands.txt"\ngit checkout main
+   96  git merge station-upgrade
+   97  git log --oneline
+   98  git log --oneline >> commands.txt
+   99  cat >> commands.txt << 'EOF'\ngit add commands.txt\ngit commit -m "Add command log"\ngit push originmain station-upgrade\nq\nhistory 1\nEOF
+  100  history 1
+  101  git add commands.txt && git commit -m "Update commands.txt"\ngit checkout mainq
+  102  git --online
+  103  git log --oneline >> commands.txt
+  104  echo "AI was utilized for question 12,15,19" >> commands.txt
+  105  git add commands.txt
+  106  git commit --amend --no-edit
+  107  git push origin main station-upgrade
+  108  pwd
+  109  cd /Users/alex/Downloads/03-assignment.ipynb
+  110  cd /Downloads/03-assignment.ipynb
+  111  cd /Downloads/03-assignment.ipynbls
+  112  lsa
+  113  ls
+  114  cd Documents
+  115  pwd
+  116  ls
+  117  cd "DSCI 350"
+  118  '/Users/alex/Downloads/03-assignment.ipynb'   git --version
+  119     git --version
+  120  mkdir reading-list
+  121  cd reading-list
+  122  git init
+  123  git status
+  124  touch books.md
+  125  git status
+  126  echo "# My reading list" > README.md
+  127  git add README.md
+  128  git commit -m "Add README"
+  129  git log
+  130  git log --oneline
+  131  echo "drafts/" > .gitignore
+  132  echo "*.tmp" >> .gitignore
+  133  mkdir drafts
+  134  touch drafts/ideas.tmp
+  135  git status
+  136  git status --ignored
+  137  git add .gitignore
+  138  git commit -m "Add gitignore"
+  139  git switch -c recommendations
+  140  mkdir books
+  141  echo "- Dune by Frank Herbert" > books/recommendations.md
+  142  echo "- Pride and Prejudice by Jane Austen" >> books/recommendations.md
+  143  git add books/recommendations.md
+  144  git commit -m "Add recommendations"
+  145  git switch main
+  146  git merge recommendations
+  147  git branch
+  148  git branch -d recommendations
+  149  git branch
+  150  git remote add origin https://github.com/AxParr/reading-list.git
+  151  git push -u origin main
+  152  git branch -M main
+  153  git push -u origin main
+  154  git switch -c more-books
+  155  echo "- 1984 by George Orwell" >> books/recommendations.md
+  156  echo "- The Great Gatsby by F. Scott Fitzgerald" >> books/recommendations.md
+  157  git add books/recommendations.md
+  158  git commit -m "Add two novels"
+  159  git push -u origin more-books
+  160  git switch main
+  161  git pull
+  162  echo "- Charlotte's Web by E.B. White" >> books/recommendations.md
+  163  git commit -m "Add boks"
+  164  git commit --amend -m "Add books"
+  165  git remote -v
+  166  git status 
+  167  alex@Aixmar-Macbook reading-list % open -e README.md
+  168  open -e README.md
+  169  sed -i '' '1s/$/ hi/' README.md
+  170  git diff
+  171  git add README.md
+  172  git commit -m "Update README"
+  173  git push
+  174  git pull
+  175  git config pull.rebase false 
+  176  git pull
+  177  git push
+  178  git config pull.rebase true
+  179  git pull
+  180  git push
+  181  git push -f
+  182  curl -sL "https://yihui.org/tinytex/install-bin-unix.sh" | sh
+  183  curl -sL "https://yihui.org/tinytex/install-bin-unix.sh" | sh
+  184  ls ~/Library/TinyTeX/bin
+  185  echo 'export PATH="$HOME/Library/TinyTeX/bin/universal-darwin:$PATH"' >> ~/.zshrc
+  186  source ~/.zshrc
+  187  tlmgr --version
+  188  brew --help
+  189  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  190  brew install git
+  191  echo >> /Users/alex/.zprofile
+  192  echo 'eval "$(/opt/homebrew/bin/brew shellenv zsh)"' >> /Users/alex/.zprofile
+  193  eval "$(/opt/homebrew/bin/brew shellenv zsh)"
+  194  brew install git
+  195  brew install --cask quarto
+  196  Marie123
+  197  clear
+  198  quarto --version
+  199  quarto install tinytex
+  200  git --version
+  201  brew install gh\n
+  202  gh auth setup
+  203  gh auth setup-git
+  204  gh auth login
+  205  gh --help
+  206  gh repo list
+  207  ---\ntitle: "Rainfall report"\nauthor: "Your name"\nformat: html\njupyter: python3\n\nimport pandas as pd\n\nrain = pd.DataFrame({\n    "month": ["Jan", "Feb", "Mar", "Apr"],\n    "mm": [241, 215, 180, 96]\n})\n---
+  208  git helo <command>
+  209  git help <command
+  210  git help <command>
+  211  git help <command>
+  212  git help gh repo clone AxParr/reading-list
+  213  gh repo clone AXPARR/reading-list
+  214  git status 
+  215  git status
+  216  gh repo clone AxParr/reading-list
+  217  cd reading-list
+  218  git remote -v
+  219  echo "Testing git stash" >> README.md
+  220  git status
+  221  git stash
+  222  git status
+  223  git stash pop
+  224  git restore README.md
+  225  git status
+  226  echo "My first note" > notes.md
+  227  git add notes.md\n
+  228  git commit -m "Add notes"
+  229  echo "My first todo" > todo.md
+  230  git add todo.md
+  231  git commit --amend --no-edit
+  232  git log --oneline
+  233  git show --stat HEAD
+  234  git log --oneline
+  235  git rev-list --count HEAD
+  236  git log --oneline --reverse | head -1
+  237  git log
+  238  echo "A new line" >> notes.md
+  239  git diff
+  240  git add notes.md
+  241  git diff
+  242  git diff --staged
+  243  cd ..\npwd
+  244  mkdir reset-soft
+  245  cd reset-soft
+  246  git init -b main
+  247  echo "line one" > notes.txt
+  248  git add notes.txt
+  249  git commit -m "First commit"
+  250  echo "line two" >> notes.txt
+  251  git commit -am "Second commit"
+  252  cd ..
+  253  mkdir reset-hard
+  254  cd reset-hard
+  255  git init -b main
+  256  echo "line one" > notes.txt
+  257  git add notes.txt
+  258  git commit -m "First commit"
+  259  echo "line two" >> notes.txt
+  260  git commit -am "Second commit"
+  261  cd ..
+  262  cd reset-soft
+  263  git reset --soft HEAD~1
+  264  git status
+  265  cat notes.txt
+  266  cd ..
+  267  cd reset-hard
+  268  git reset --hard HEAD~1
+  269  git status
+  270  cat notes.txt
+  271  cd ..
+  272  cd reading-list
+  273  git restore --staged notes.md
+  274  git restore notes.md
+  275  git status
+  276  git log --oneline --reverse | head -1
+  277  git checkout e4f5g6h
+  278  git log --oneline
+  279  git checkout a048f3f
+  280  git restore --staged books/recommendations.md
+  281  git restore books/recommendations.md
+  282  git status
+  283  git checkout a048f3f
+  284  git switch maingit switch main
+  285  git switch main
+  286  git status
+  287  mkdir conflict-practice
+  288  cd conflict-practice
+  289  git init -b main
+  290  echo "The project starts here." > plan.txt
+  291  git add plan.txt
+  292  git commit -m "Add plan"
+  293  git switch -c feature
+  294  echo "The project starts with data cleaning." > plan.txt
+  295  git commit -am "Update plan on feature"
+  296  git switch main
+  297  echo "The project starts with data collection." > plan.txt
+  298  git commit -am "Update plan on main"
+  299  git merge feature
+  300  nano plan.txt
+  301  git add plan.txt
+  302  git commit --no-edit
+  303  git status
+  304  git push
+  305  git tag -a v1.0 -m "First release"
+  306  git push origin v1.0
+  307  pwd
+  308  cd ~/path/to/DSCI\ 350/reading-list
+  309  cd ../reading-list
+  310  cd ..
+  311  git push origin v1.0
+  312  git tag -a v1.0 -m "First release"
+  313  git push origin v1.0
+  314  git log --oneline --grep="books"
+  315  git config user.name
+  316  git log --oneline --author="AxParr"
+  317  git log --oneline --author="Alex"
+  318  git log --oneline --grep="books"
+  319  git log --oneline --author="AxParr"
+  320  git log --format="%h %an %s\ngit log --format="%h %an %s"\n"
+  321  git log --format="%h %an %s"
+  322  git log --oneline --author="Aixmar"
+  323  git config --global alias.st status
+  324  git config --global alias.last "log -1 HEAD"
+  325  git st
+  326  git last
+  327  cat ~/.gitconfig
+  328  mkdir secret-practice
+  329  cd secret-practice
+  330  git init -b main
+  331  echo "api_key=12345" > secrets.txt
+  332  git add secrets.txt
+  333  git commit -m "Add config"
+  334  cd ..\npwd
+  335  cd ..
+  336  mkdir secret-practice
+  337  cd secret-practice
+  338  git init -b main
+  339  echo "api_key=12345" > secrets.txt
+  340  git add secrets.txt
+  341  git commit -m "Add config"
+  342  git rm --cached secrets.txt
+  343  echo "secrets.txt" > .gitignore
+  344  git add .gitignore
+  345  git commit -m "Stop tracking secrets.txt"
+  346  git ls-files
+  347  ls
+  348  git status
+  349  quarto install tinytex
+  350  quarto check
+  351  quarto -- help
+  352  quarto--help
+  353  quarto --help
+  354  quarto preview report.qmd
+  355  quarto render report.qmd 
+  356  pwd\nls -a
+  357  git add .gitignore
+  358  git commit -m "Add gitignore"
+  359  git config --global user.name AxParra
+  360  git config --global user.email amparra@emory.edu
+  361  git commit --amend --reset-author --no-edit
+  362  git log -1
+  363  cat .gitignore
+  364  rm about.qmd
+  365  touch budget-revenue.qmd
+  366  touch runtime-rating.qmd
+  367  touch bond.qmd 
+  368  pwd
+  369  quarto render
+  370  quarto check jupyter
+  371  /usr/local/bin/python3 -m pip install nbformat nbclient ipykernel pandas matplotlib
+  372  quarto check jupyter
+  373  quarto render
+  374  ls -a
+  375  git status 
+  376  git add .
+  377  git commit -m "Add site pages and freeze"
+  378  quarto publish gh-pages
+  379  touch commands.txt
+  
+git add commands.txt
+git commit -m "Add command log"
+git push
